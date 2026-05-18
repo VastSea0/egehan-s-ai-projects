@@ -10,6 +10,8 @@ class MyNerualNetwork(nn.Module):
         # takes first hidden layer outputs, outputs to second hidden layer
         self.layer2 = nn.Linear(hidden_size, hidden_size)
 
+        self.layer3 = nn.Linear(hidden_size, hidden_size)
+
         # takes second hidden layer outputs, outputs final prediction
         self.output_layer = nn.Linear(hidden_size, output_size)
 
@@ -20,6 +22,9 @@ class MyNerualNetwork(nn.Module):
         x = self.relu(x)
 
         x = self.layer2(x)
+        x = self.relu(x)
+
+        x = self.layer3(x)
         x = self.relu(x)
 
         x= self.output_layer(x)

@@ -17,6 +17,7 @@ layer_sizes = [
     model.layer1.in_features,
     model.layer1.out_features,
     model.layer2.out_features,
+    model.layer3.out_features,
     model.output_layer.out_features
 ]
 
